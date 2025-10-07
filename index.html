@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Designová stránka</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <title>Zaklínač - Svět Sapkowského</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Roboto&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -13,25 +13,24 @@
     }
 
     body {
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(to right, #f8fafc, #e2e8f0);
-      color: #1a202c;
+      font-family: 'Roboto', sans-serif;
+      background-color: #111;
+      color: #f5f5f5;
       line-height: 1.6;
     }
 
     header {
-      background-color: #ffffffcc;
       padding: 1.5rem 2rem;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      background-color: #1a1a1a;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+      text-align: center;
     }
 
     header h1 {
-      font-size: 1.8rem;
-      font-weight: 800;
-      color: #2d3748;
+      font-family: 'Cinzel', serif;
+      font-size: 2.5rem;
+      color: #e0e0e0;
+      letter-spacing: 2px;
     }
 
     .hero {
@@ -41,61 +40,93 @@
       justify-content: center;
       text-align: center;
       padding: 6rem 2rem;
+      background: linear-gradient(to bottom, #1a1a1a, #000);
       min-height: 80vh;
     }
 
     .hero h2 {
+      font-family: 'Cinzel', serif;
       font-size: 3rem;
       margin-bottom: 1rem;
-      font-weight: 700;
-      color: #2d3748;
+      color: #d4af37;
     }
 
     .hero p {
-      max-width: 600px;
-      font-size: 1.2rem;
-      color: #4a5568;
+      max-width: 700px;
+      font-size: 1.1rem;
+      color: #ccc;
       margin-bottom: 2rem;
     }
 
     .hero button {
-      background: #4f46e5;
-      color: white;
-      border: none;
-      padding: 0.9rem 2rem;
+      background: none;
+      border: 2px solid #d4af37;
+      color: #d4af37;
+      padding: 0.75rem 2rem;
       font-size: 1rem;
-      border-radius: 8px;
+      font-weight: bold;
+      border-radius: 4px;
       cursor: pointer;
-      transition: background 0.3s ease;
-      box-shadow: 0 4px 14px rgba(79, 70, 229, 0.4);
+      transition: all 0.3s ease;
     }
 
     .hero button:hover {
-      background: #4338ca;
+      background: #d4af37;
+      color: #000;
+    }
+
+    .quote {
+      padding: 4rem 2rem;
+      background-color: #121212;
+      text-align: center;
+      font-style: italic;
+      color: #aaa;
+    }
+
+    .quote p {
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 1.2rem;
     }
 
     footer {
       text-align: center;
       padding: 2rem;
+      background-color: #1a1a1a;
       font-size: 0.9rem;
-      color: #718096;
+      color: #555;
+    }
+
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Moje Designová Stránka</h1>
+    <h1>Svět Zaklínače</h1>
   </header>
 
   <section class="hero">
-    <h2>Vítej na mé webové stránce</h2>
-    <p>Toto je jednoduchý, moderní a responzivní design vytvořený pouze s HTML a interním CSS. Můžeš si jej upravit podle sebe.</p>
-    <button>Začít</button>
+    <h2>Geralt z Rivie</h2>
+    <p>Zaklínač. Lovec příšer, mutovaný válečník vycvičený k boji s temnotou. Svět Andrzeje Sapkowského je plný morální šedi, magie a krutého osudu.</p>
+    <button>Prozkoumat svět</button>
+  </section>
+
+  <section class="quote">
+    <p>"Zlo je zlo. Menší, větší, střední – je to jedno. Stupeň je libovolný. Smysl je stejný."</p>
+    <p>– Geralt z Rivie</p>
   </section>
 
   <footer>
-    © 2025 Moje Webová Stránka. Všechna práva vyhrazena.
+    © 2025 Fanouškovská stránka Zaklínače. Neoficiální obsah.
   </footer>
 
 </body>
