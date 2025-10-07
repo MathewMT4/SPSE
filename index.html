@@ -10,55 +10,70 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      scroll-behavior: smooth;
     }
 
     body {
       font-family: 'Roboto', sans-serif;
       background-color: #111;
       color: #f5f5f5;
-      line-height: 1.6;
     }
 
     header {
-      padding: 1.5rem 2rem;
       background-color: #1a1a1a;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
-      text-align: center;
     }
 
     header h1 {
       font-family: 'Cinzel', serif;
-      font-size: 2.5rem;
-      color: #e0e0e0;
-      letter-spacing: 2px;
+      font-size: 1.5rem;
+      color: #d4af37;
     }
 
-    .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
+    nav a {
+      color: #ccc;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #d4af37;
+    }
+
+    section {
       padding: 6rem 2rem;
-      background: linear-gradient(to bottom, #1a1a1a, #000);
-      min-height: 80vh;
+      text-align: center;
+      min-height: 100vh;
     }
 
-    .hero h2 {
+    .hero, .characters, .world {
+      background: linear-gradient(to bottom, #1a1a1a, #000);
+    }
+
+    h2 {
       font-family: 'Cinzel', serif;
-      font-size: 3rem;
+      font-size: 2.5rem;
       margin-bottom: 1rem;
       color: #d4af37;
     }
 
-    .hero p {
-      max-width: 700px;
+    p {
+      max-width: 800px;
+      margin: 0 auto 2rem;
       font-size: 1.1rem;
       color: #ccc;
-      margin-bottom: 2rem;
     }
 
-    .hero button {
+    .button {
       background: none;
       border: 2px solid #d4af37;
       color: #d4af37;
@@ -70,23 +85,30 @@
       transition: all 0.3s ease;
     }
 
-    .hero button:hover {
+    .button:hover {
       background: #d4af37;
       color: #000;
     }
 
-    .quote {
-      padding: 4rem 2rem;
-      background-color: #121212;
-      text-align: center;
-      font-style: italic;
-      color: #aaa;
+    .characters .character-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin-top: 2rem;
     }
 
-    .quote p {
-      max-width: 600px;
-      margin: 0 auto;
-      font-size: 1.2rem;
+    .character {
+      background-color: #222;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #000;
+    }
+
+    .character h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.5rem;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
     }
 
     footer {
@@ -97,13 +119,14 @@
       color: #555;
     }
 
-    @media (max-width: 768px) {
-      .hero h2 {
-        font-size: 2rem;
+    @media (min-width: 768px) {
+      .character-list {
+        flex-direction: row;
+        justify-content: center;
       }
 
-      .hero p {
-        font-size: 1rem;
+      .character {
+        width: 30%;
       }
     }
   </style>
@@ -111,22 +134,50 @@
 <body>
 
   <header>
-    <h1>Svět Zaklínače</h1>
+    <h1>Zaklínač</h1>
+    <nav>
+      <a href="#home">Domů</a>
+      <a href="#characters">Postavy</a>
+      <a href="#world">Svět</a>
+    </nav>
   </header>
 
-  <section class="hero">
+  <!-- Domovská sekce -->
+  <section id="home" class="hero">
     <h2>Geralt z Rivie</h2>
-    <p>Zaklínač. Lovec příšer, mutovaný válečník vycvičený k boji s temnotou. Svět Andrzeje Sapkowského je plný morální šedi, magie a krutého osudu.</p>
-    <button>Prozkoumat svět</button>
+    <p>Lovec příšer, známý jako Bílý vlk. Putuje světem plným magie, intrik a nestvůr, aby chránil lidi před temnotou – za odměnu.</p>
+    <button class="button">Více o Zaklínačích</button>
   </section>
 
-  <section class="quote">
-    <p>"Zlo je zlo. Menší, větší, střední – je to jedno. Stupeň je libovolný. Smysl je stejný."</p>
-    <p>– Geralt z Rivie</p>
+  <!-- Sekce Postavy -->
+  <section id="characters" class="characters">
+    <h2>Postavy</h2>
+    <p>Ve světě Zaklínače najdeme mnoho fascinujících postav – od čarodějek až po elfí rebely.</p>
+    <div class="character-list">
+      <div class="character">
+        <h3>Yennefer z Vengerbergu</h3>
+        <p>Mocná čarodějka a osudová láska Geralta. Ambiciózní, nezávislá a nebezpečná.</p>
+      </div>
+      <div class="character">
+        <h3>Ciri</h3>
+        <p>Dědička trůnu Cintry, dítě překvapení. Osud ji svázal s Geraltem a nese moc, kterou nikdo nechápe.</p>
+      </div>
+      <div class="character">
+        <h3>Jaskier (Marigold)</h3>
+        <p>Bard, přítel a nechtěný společník Geralta. Proslul svými písněmi a láskami.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sekce Svět -->
+  <section id="world" class="world">
+    <h2>Svět Zaklínače</h2>
+    <p>Temný kontinent plný království, čarodějů, elfů, příšer a lidské krutosti. Magie zde splývá s politikou a starodávné kletby ožívají.</p>
+    <p><em>„Když lidé nenávidí, hledají viníky mezi těmi, kdo se odlišují.“</em></p>
   </section>
 
   <footer>
-    © 2025 Fanouškovská stránka Zaklínače. Neoficiální obsah.
+    © 2025 Fanouškovský projekt. Všechna práva vyhrazena.
   </footer>
 
 </body>
