@@ -4,9 +4,9 @@ html, body {
     margin: 0;
 }
 
-.fullscreen {
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;   /* vyplní celou obrazovku */
-    display: block;
+body {
+    background-image: url("404Spotify.png");
+    background-size: cover;      /* klíčová vlastnost */
+    background-position: center;
+    background-repeat: no-repeat;
 }
