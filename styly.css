@@ -1,52 +1,75 @@
-/* Resetování a základní nastavení */
-body, html {
+* {
     margin: 0;
     padding: 0;
-    height: 100%;
-    width: 100%;
-    overflow: hidden; /* Žádné posuvníky */
-    background-color: #0d1a21; /* Tmavá barva, aby to při načítání nebliklo bíle */
+    box-sizing: border-box;
 }
 
-/* Hlavní kontejner s obrázkem */
-.background-container {
-    position: fixed;
-    top: 0;
-    left: 0;
+body, html {
     width: 100%;
     height: 100%;
+    overflow: hidden; /* Zamezí scrollování, aby to vypadalo jako aplikace */
+    background-color: #000;
+}
+
+.hero-section {
+    width: 100%;
+    height: 100vh;
+    /* NAHRÁNÍ OBRÁZKU */
+    background-image: url('404Spotify.jpg');
     
-    /* Načtení obrázku */
-    background-image: url('404Spotify.jpg'); 
-    
-    /* KLÍČOVÉ NASTAVENÍ PRO CELOU OBRAZOVKU */
-    background-size: cover;    /* Rozprostře obrázek přes celou plochu */
-    background-position: center; /* Vycentruje motiv (404 a logo) */
+    /* KLÍČOVÉ VLASTNOSTI */
+    background-size: cover;      /* Vyplní celou obrazovku */
+    background-position: center;  /* Udrží střed obrázku uprostřed */
     background-repeat: no-repeat;
     
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end; /* Tlačítko dáme dolů */
+    padding-bottom: 50px;
+    position: relative;
 }
 
-/* Stylování tlačítka */
-.home-button {
-    margin-top: 480px; /* Posune tlačítko pod text v obrázku */
-    padding: 15px 35px;
-    background-color: #1DB954; /* Spotify zelená */
+/* Jemné ztmavení spodní části pro lepší čitelnost tlačítka */
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    z-index: 1;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+}
+
+.btn-spotify {
+    background-color: #1DB954;
     color: white;
     text-decoration: none;
-    border-radius: 50px;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-weight: bold;
+    font-size: 14px;
+    padding: 16px 45px;
+    border-radius: 500px;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
 }
 
-.home-button:hover {
-    transform: scale(1.05);
+.btn-spotify:hover {
     background-color: #1ed760;
-    box-shadow: 0 6px 20px rgba(29, 185, 84, 0.4);
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(29, 185, 84, 0.5);
+}
+
+/* Responzivita pro mobily */
+@media (max-width: 768px) {
+    .hero-section {
+        background-size: contain; /* Na mobilu raději zobrazíme celý obrázek */
+        background-color: #0d1a21; /* Barva ladící s pozadím obrázku */
+    }
 }
