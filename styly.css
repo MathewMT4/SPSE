@@ -1,30 +1,12 @@
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Základ */
 html, body {
     width: 100%;
     height: 100%;
-    background-color: #0b1f2a;
-    overflow: hidden;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    margin: 0;
 }
 
-/* Fullscreen hero */
-.hero {
+.fullscreen {
     width: 100vw;
     height: 100vh;
-}
-
-/* Obrázek přes celý monitor */
-.hero img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;      /* vyplní obrazovku bez deformace */
-    object-position: center;
+    object-fit: cover;   /* vyplní celou obrazovku */
     display: block;
 }
