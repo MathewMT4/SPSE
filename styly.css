@@ -1,12 +1,27 @@
-html, body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
+/* ZABÍT VŠECHNO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body {
-    background-image: url("404Spotify.png");
-    background-size: cover;      /* klíčová vlastnost */
-    background-position: center;
-    background-repeat: no-repeat;
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* OBRÁZEK PŘES CELÝ MONITOR */
+#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  object-fit: cover;
+  object-position: center;
+
+  z-index: -1;
 }
